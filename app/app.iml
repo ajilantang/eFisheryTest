@@ -97,6 +97,7 @@
     <orderEntry type="library" exported="" name="support-core-ui-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="runner-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-idling-resource-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="core-2.3.0" level="project" />
     <orderEntry type="library" exported="" name="support-fragment-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-1.0.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-library-1.3" level="project" />
@@ -113,6 +114,7 @@
     <orderEntry type="library" exported="" scope="TEST" name="javax.annotation-api-1.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="capture-activity-2.3.0-1.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javawriter-2.1.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
