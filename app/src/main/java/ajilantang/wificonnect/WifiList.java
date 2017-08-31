@@ -19,6 +19,7 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,15 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
-//public class WifiList extends Activity{
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//        TextView textview = new TextView(this);
-//        textview.setText("This is BlackBerry tab");
-//        setContentView(textview);
-//    }
-//}
+
 public class WifiList extends ListActivity {
     WifiManager mainWifiObj;
     WifiScanReceiver wifiReciever;
@@ -55,15 +48,14 @@ public class WifiList extends ListActivity {
         mainWifiObj = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         wifiReciever = new WifiScanReceiver();
         mainWifiObj.startScan();
-
         // listening to single list item on click
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 // selected item
                 String ssid = ((TextView) view).getText().toString();
-                connectToWifi(ssid);
-                Toast.makeText(WifiList.this,"Wifi SSID : "+ssid,Toast.LENGTH_SHORT).show();
+                connectToWifi(ssid.substring(23).trim());
+                Toast.makeText(WifiList.this,"Wifi SSID  : "+ssid.substring(23),Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -78,13 +70,15 @@ public class WifiList extends ListActivity {
         registerReceiver(wifiReciever, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         super.onResume();
     }
+
     class WifiScanReceiver extends BroadcastReceiver {
         @SuppressLint("UseValueOf")
         public void onReceive(Context c, Intent intent) {
             List<ScanResult> wifiScanList = mainWifiObj.getScanResults();
             wifis = new String[wifiScanList.size()];
             for(int i = 0; i < wifiScanList.size(); i++){
-                wifis[i] = ((wifiScanList.get(i)).toString());
+                int level = WifiManager.calculateSignalLevel(wifiScanList.get(i).level,5);
+                wifis[i] ="     "+"Wifi Strength"+" "+level+" | "+((wifiScanList.get(i)).toString());
             }
             String filtered[] = new String[wifiScanList.size()];
             int counter = 0;
@@ -97,7 +91,6 @@ public class WifiList extends ListActivity {
 
             }
             list.setAdapter(new ArrayAdapter<String>(getApplicationContext(),R.layout.list_item,R.id.label, filtered));
-
 
         }
     }
@@ -122,8 +115,9 @@ public class WifiList extends ListActivity {
     private void connectToWifi(final String wifiSSID) {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.connect);
-        dialog.setTitle("Connect to Network "+wifiSSID);
-
+        dialog.setTitle("Connect to Network");
+        TextView text = (TextView) dialog.findViewById(R.id.ssid);
+        text.setText(wifiSSID);
         Button dialogButton = (Button) dialog.findViewById(R.id.okButton);
         pass = (EditText) dialog.findViewById(R.id.textPassword);
 
