@@ -55,7 +55,7 @@ public class WifiList extends ListActivity {
                 // selected item
                 String ssid = ((TextView) view).getText().toString();
                 connectToWifi(ssid.substring(23).trim());
-                Toast.makeText(WifiList.this,"Wifi SSID  : "+ssid.substring(23),Toast.LENGTH_SHORT).show();
+                Toast.makeText(WifiList.this,"Wifi SSID : "+ssid.substring(23),Toast.LENGTH_SHORT).show();
 
             }
         });
