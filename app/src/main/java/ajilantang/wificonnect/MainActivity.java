@@ -43,7 +43,7 @@ public class MainActivity extends TabActivity {
         tabHost.addTab(tabApi);
 
         //set Windows tab as default (zero based)
-        tabHost.setCurrentTab(2);
+        tabHost.setCurrentTab(1);
     }
 
 }
