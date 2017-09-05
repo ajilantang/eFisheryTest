@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/ajilantang/Desktop/eFisheryTest/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/ajilantang/Desktop/eFisheryTest/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2c0db2a13f77b68ac32adaa3e30f61c3d9983894/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/ajilantang/Desktop/eFisheryTest/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d2a90ac63b802357e4002165a7059999c19f2587">
+        <dex dex="/home/ajilantang/Desktop/eFisheryTest/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c15e5d77dfdde9fd2a4a61aa58a61a53093e0bb6/classes.dex" />
+    </item>
+
+</items>
