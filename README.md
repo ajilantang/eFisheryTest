@@ -30,6 +30,9 @@
 ## button for scan
 ![alt text](https://i.imgur.com/bCem0h9.jpg "asdasd") 
 ## wifilist
-![alt text](https://i.imgur.com/OgpNssb.jpg "asdasd") 
+![alt text](https://i.imgur.com/mn8Ewpwg.png "asdasd") 
 ## input password for qr code and wifilist
 ![alt text](https://i.imgur.com/iPqywUo.jpg "asdasd") 
+
+## after connected
+![alt text](https://i.imgur.com/BUnfod5g.png "asdasd") 
