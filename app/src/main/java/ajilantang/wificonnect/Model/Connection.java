@@ -4,6 +4,9 @@ package ajilantang.wificonnect.Model;
  * Created by ajilantang on 05/09/17.
  */
 
+/**
+ * connection model
+ */
 public class Connection {
     private String name;
     private int strength;

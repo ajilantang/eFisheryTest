@@ -31,6 +31,7 @@ public class WifiAdapter extends BaseAdapter{
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+    //return adaptor size based on model size
 
     @Override
     public int getCount() {
@@ -55,13 +56,20 @@ public class WifiAdapter extends BaseAdapter{
         SignalView signalView;
         TextView connected;
     }
+
+    /**
+     * list item for wifilist
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return
+     */
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.list_item, null);
-        Log.d("Adapterrrr", "getView: ");
         Connection connection = (Connection) getItem(position);
 
         holder.signalView = (SignalView) rowView.findViewById(R.id.signal_view);

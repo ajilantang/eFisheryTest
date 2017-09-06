@@ -15,7 +15,7 @@ import ajilantang.wificonnect.R;
 
 
 /**
- * Created by jalucenyo on 7/2/15.
+ * Signal view branch to show image based on signal strengh (1-5)
  */
 public class SignalView extends View {
 

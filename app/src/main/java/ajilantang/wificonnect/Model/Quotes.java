@@ -7,6 +7,9 @@ import com.google.gson.annotations.SerializedName;
  * Created by ajilantang on 02/09/17.
  */
 
+/**
+ * quotes model from api formastic
+ */
 public class Quotes {
     @SerializedName("quoteText")
     @Expose

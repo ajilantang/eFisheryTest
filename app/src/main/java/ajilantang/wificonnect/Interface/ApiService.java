@@ -9,6 +9,9 @@ import retrofit2.http.GET;
  * Created by ajilantang on 02/09/17.
  */
 
+/**
+ * api service get method for quotes from fromastic
+ */
 public interface ApiService {
     /*
   Retrofit get annotation with our URL

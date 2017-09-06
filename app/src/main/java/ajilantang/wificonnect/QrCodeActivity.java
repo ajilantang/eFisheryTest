@@ -72,6 +72,11 @@ public class QrCodeActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    /**
+     * connect wifi branching based on wpa
+     * @param wifiSSID
+     * @param isWPA
+     */
     private void connectToWifi(final String wifiSSID, Boolean isWPA) {
         if (isWPA) {
             final Dialog dialog = new Dialog(this);
@@ -97,6 +102,13 @@ public class QrCodeActivity extends Activity {
         }
     }
 
+    /**
+     * Connect to wifi
+     * check without pass
+     * return dialog if pass doesn't passs
+     * @param wifiSSID
+     * @param wifiPass
+     */
     private void finallyConnect(String wifiSSID, String wifiPass) {
 
         WifiConfiguration wifiConfig = new WifiConfiguration();

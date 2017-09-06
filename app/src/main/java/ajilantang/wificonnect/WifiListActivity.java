@@ -145,6 +145,12 @@ public class WifiListActivity extends Activity {
         }
     }
 
+    /**
+     * Connect to wifi based on wpa
+     * @param wifiSSID
+     * @param isWPA
+     * @param position
+     */
     private void connectToWifi(final String wifiSSID, Boolean isWPA, final int position) {
         if(isWPA) {
             dialog = new Dialog(this);

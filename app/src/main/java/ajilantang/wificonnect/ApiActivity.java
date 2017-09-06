@@ -26,15 +26,16 @@ public class ApiActivity extends Activity {
     private static final String ROOT_URL = "https://api.forismatic.com/api/";
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.quotes_forismatic);
         if(isOnline()) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(ROOT_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
+            // instansiate api
             ApiService service = retrofit.create(ApiService.class);
             Call<Quotes> call = service.getQuotesDetail();
+            //response from api and append to xml
             call.enqueue(new Callback<Quotes>() {
                 @Override
                 public void onResponse(Call<Quotes> call, Response<Quotes> response) {
@@ -43,7 +44,7 @@ public class ApiActivity extends Activity {
                     quoteAuthor.setText("Author  :  " + response.body().getQuoteAuthor());
                     quoteText.setText("Quotes  :  " + response.body().getQuoteText());
                 }
-
+                //error handling invalid api
                 @Override
                 public void onFailure(Call<Quotes> call, Throwable t) {
                     TextView error = (TextView) findViewById(R.id.error);
@@ -58,7 +59,6 @@ public class ApiActivity extends Activity {
 
     }
     //check connection on resume
-
     @Override
     protected void onResume() {
         if (isOnline()) {
@@ -84,12 +84,14 @@ public class ApiActivity extends Activity {
                 }
             });
         }
+        // no connection
         else if(!isOnline()){
             TextView error = (TextView) findViewById(R.id.error);
             error.setText("there is no internet access , please connect to wifi or mobile data");
         }
         super.onResume();
     }
+    //connection checker return boolean
     public boolean isOnline() {
         ConnectivityManager cm =
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
